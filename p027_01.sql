@@ -1,15 +1,15 @@
--- Q: poptbl2‚ðsŽ‚¿‚©‚ç—ñŽ‚¿‚Ö…•½“WŠJ‚¹‚æB{«•Ê, ‘S‘, “¿“‡, ì, ˆ¤•Q, ‚’m, Žl‘}
+-- Q: poptbl2ã‚’è¡ŒæŒã¡ã‹ã‚‰åˆ—æŒã¡ã¸æ°´å¹³å±•é–‹ã›ã‚ˆã€‚{æ€§åˆ¥, å…¨å›½, å¾³å³¶, é¦™å·, æ„›åª›, é«˜çŸ¥, å››å›½}
 -- A:
 SELECT
-  CASE WHEN sex = '1' THEN '’j' ELSE '—' END AS «•Ê
-  ,SUM(population) AS ‘S‘
-  ,SUM(CASE WHEN pref_name = '“¿“‡' THEN population ELSE 0 END) AS “¿“‡
-  ,SUM(CASE WHEN pref_name = 'ì' THEN population ELSE 0 END) AS ì
-  ,SUM(CASE WHEN pref_name = 'ˆ¤•Q' THEN population ELSE 0 END) AS ˆ¤•Q
-  ,SUM(CASE WHEN pref_name = '‚’m' THEN population ELSE 0 END) AS ‚’m
-  ,SUM(CASE WHEN pref_name = '“¿“‡' OR pref_name = 'ì' OR pref_name = 'ˆ¤•Q' OR pref_name = '‚’m' THEN population ELSE 0 END) AS Žl‘
+  CASE WHEN sex = '1' THEN 'ç”·' ELSE 'å¥³' END AS æ€§åˆ¥
+  ,SUM(population) AS å…¨å›½
+  ,SUM(CASE WHEN pref_name = 'å¾³å³¶' THEN population ELSE 0 END) AS å¾³å³¶
+  ,SUM(CASE WHEN pref_name = 'é¦™å·' THEN population ELSE 0 END) AS é¦™å·
+  ,SUM(CASE WHEN pref_name = 'æ„›åª›' THEN population ELSE 0 END) AS æ„›åª›
+  ,SUM(CASE WHEN pref_name = 'é«˜çŸ¥' THEN population ELSE 0 END) AS é«˜çŸ¥
+  ,SUM(CASE WHEN pref_name = 'å¾³å³¶' OR pref_name = 'é¦™å·' OR pref_name = 'æ„›åª›' OR pref_name = 'é«˜çŸ¥' THEN population ELSE 0 END) AS å››å›½
 FROM
-  poptbl2
+  PopTbl2
 GROUP BY
   sex
 ;
