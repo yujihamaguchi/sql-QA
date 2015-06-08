@@ -1,4 +1,4 @@
-﻿-- Q: poptblを地方単位（四国、九州、その他）にまとめ、その単位で人口を集計せよ。
+﻿-- Q: PopTblを地方単位（四国、九州、その他）にまとめ、その単位で人口を集計せよ。
 -- A
 SELECT
   CASE
@@ -8,7 +8,7 @@ SELECT
   END AS district
   ,SUM(population) AS population
 FROM
-  poptbl
+  PopTbl
 GROUP BY
   CASE
     WHEN pref_name IN ('徳島', '香川', '愛媛', '高知') THEN '四国'

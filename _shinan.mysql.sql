@@ -525,7 +525,7 @@ DROP TABLE IF EXISTS `Salaries`;
 CREATE TABLE `Salaries` (
   `name` varchar(10) DEFAULT NULL,
   `salary` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -646,7 +646,7 @@ CREATE TABLE `SomeTable` (
   `col_1` int(11) NOT NULL,
   `col_2` char(2) NOT NULL,
   PRIMARY KEY (`p_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

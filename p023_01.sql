@@ -1,4 +1,5 @@
-﻿-- Q: studentclubにて、１つだけのクラブに所属している学生については、そのクラブＩＤを、複数のクラブを掛け持ちしている学生については、主なクラブＩＤを取得せよ。
+﻿-- Q: studentclubにて、１つだけのクラブに所属している学生については、そのクラブＩＤを、
+--    複数のクラブを掛け持ちしている学生については、主なクラブＩＤを取得せよ。
 -- A
 SELECT
   std_id
@@ -10,7 +11,7 @@ SELECT
             END)
   END AS club_id
 FROM
-  studentclub r1
+  StudentClub r1
 GROUP BY
   std_id
 ORDER BY 1

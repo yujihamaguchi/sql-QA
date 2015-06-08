@@ -8,5 +8,5 @@ SELECT
 		ELSE z
 	END AS greatest
 FROM
-	greatests
+	Greatests
 ;
