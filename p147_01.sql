@@ -1,14 +1,14 @@
-﻿-- Q: testscoresから全てのsubjectについてscoreが50以上のstudent_idを出力せよ。（EXISTS述語を用いること）
+﻿-- Q: TestScoresから全てのsubjectについてscoreが50以上のstudent_idを出力せよ。（EXISTS述語を用いること）
 -- A
 SELECT
 	DISTINCT
 	student_id
 FROM
-	testscores r1
+	TestScores r1
 WHERE
 	NOT EXISTS (SELECT *
 		FROM
-			testscores r2
+			TestScores r2
 		WHERE
 			r2.score < 50
 			AND r1.student_id = r2.student_id)

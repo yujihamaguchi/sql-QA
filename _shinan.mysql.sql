@@ -16,6 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `Addresses`
+--
+
+DROP TABLE IF EXISTS `Addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE Addresses
+(name VARCHAR(32),
+ family_id INTEGER,
+ address VARCHAR(32),
+ PRIMARY KEY(name, family_id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Addresses`
+--
+
+LOCK TABLES `Addresses` WRITE;
+/*!40000 ALTER TABLE `Addresses` DISABLE KEYS */;
+
+INSERT INTO Addresses VALUES('前田 義明', '100', '東京都港区虎ノ門3-2-29');
+INSERT INTO Addresses VALUES('前田 由美', '100', '東京都港区虎ノ門3-2-92');
+INSERT INTO Addresses VALUES('加藤 茶',   '200', '東京都新宿区西新宿2-8-1');
+INSERT INTO Addresses VALUES('加藤 勝',   '200', '東京都新宿区西新宿2-8-1');
+INSERT INTO Addresses VALUES('ホームズ',  '300', 'ベーカー街221B');
+INSERT INTO Addresses VALUES('ワトソン',  '400', 'ベーカー街221B');
+/*!40000 ALTER TABLE `Addresses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ArrayTbl`
 --
 
@@ -165,7 +196,7 @@ CREATE TABLE `Digits` (
 
 LOCK TABLES `Digits` WRITE;
 /*!40000 ALTER TABLE `Digits` DISABLE KEYS */;
-INSERT INTO `Digits` VALUES (0),(1);
+INSERT INTO `Digits` VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9);
 /*!40000 ALTER TABLE `Digits` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,7 +238,7 @@ CREATE TABLE `DistrictProducts2` (
   `price` int(11) NOT NULL,
   `ranking` int(11) DEFAULT NULL,
   PRIMARY KEY (`district`,`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,13 +349,13 @@ INSERT INTO `Items` VALUES ('ビール'),('紙オムツ'),('自転車');
 UNLOCK TABLES;
 
 --
--- Table structure for table `Materials2`
+-- Table structure for table `Materials`
 --
 
-DROP TABLE IF EXISTS `Materials2`;
+DROP TABLE IF EXISTS `Materials`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Materials2` (
+CREATE TABLE `Materials` (
   `center` varchar(32) NOT NULL,
   `receive_date` date NOT NULL,
   `material` varchar(32) NOT NULL,
@@ -334,13 +365,13 @@ CREATE TABLE `Materials2` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Materials2`
+-- Dumping data for table `Materials`
 --
 
-LOCK TABLES `Materials2` WRITE;
-/*!40000 ALTER TABLE `Materials2` DISABLE KEYS */;
-INSERT INTO `Materials2` VALUES ('東京','2007-04-01','錫','チリ'),('東京','2007-04-12','亜鉛','タイ'),('東京','2007-05-17','アルミニウム','ブラジル'),('東京','2007-05-20','亜鉛','タイ'),('大阪','2007-04-20','銅','オーストラリア'),('大阪','2007-04-22','ニッケル','南アフリカ'),('大阪','2007-04-29','鉛','インド'),('名古屋','2007-03-15','チタン','ボリビア'),('名古屋','2007-04-01','炭素鋼','チリ'),('名古屋','2007-04-24','炭素鋼','アルゼンチン'),('名古屋','2007-05-02','マグネシウム','チリ'),('名古屋','2007-05-10','チタン','タイ'),('福岡','2007-05-10','亜鉛','アメリカ'),('福岡','2007-05-28','錫','ロシア');
-/*!40000 ALTER TABLE `Materials2` ENABLE KEYS */;
+LOCK TABLES `Materials` WRITE;
+/*!40000 ALTER TABLE `Materials` DISABLE KEYS */;
+INSERT INTO `Materials` VALUES ('東京','2007-04-01','錫','チリ'),('東京','2007-04-12','亜鉛','タイ'),('東京','2007-05-17','アルミニウム','ブラジル'),('東京','2007-05-20','亜鉛','タイ'),('大阪','2007-04-20','銅','オーストラリア'),('大阪','2007-04-22','ニッケル','南アフリカ'),('大阪','2007-04-29','鉛','インド'),('名古屋','2007-03-15','チタン','ボリビア'),('名古屋','2007-04-01','炭素鋼','チリ'),('名古屋','2007-04-24','炭素鋼','アルゼンチン'),('名古屋','2007-05-02','マグネシウム','チリ'),('名古屋','2007-05-10','チタン','タイ'),('福岡','2007-05-10','亜鉛','アメリカ'),('福岡','2007-05-28','錫','ロシア');
+/*!40000 ALTER TABLE `Materials` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -490,6 +521,90 @@ INSERT INTO `Products` VALUES ('みかん',50),('バナナ',80),('りんご',50)
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- Table structure for table `Products2`
+--
+
+DROP TABLE IF EXISTS `Products2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Products2` (
+  `name` varchar(16) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Products2`
+--
+
+LOCK TABLES `Products2` WRITE;
+/*!40000 ALTER TABLE `Products2` DISABLE KEYS */;
+INSERT INTO `Products2` VALUES
+('りんご',50)
+,('みかん',100)
+,('みかん',100)
+,('みかん',100)
+,('バナナ',80);
+/*!40000 ALTER TABLE `Products2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Products3`
+--
+
+DROP TABLE IF EXISTS `Products3`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Products3` (
+  `name` varchar(16) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Products3`
+--
+
+LOCK TABLES `Products3` WRITE;
+/*!40000 ALTER TABLE `Products3` DISABLE KEYS */;
+INSERT INTO Products3 VALUES('りんご',  50);
+INSERT INTO Products3 VALUES('みかん',  100);
+INSERT INTO Products3 VALUES('ぶどう',  50);
+INSERT INTO Products3 VALUES('スイカ',  80);
+INSERT INTO Products3 VALUES('レモン',  30);
+INSERT INTO Products3 VALUES('いちご',  100);
+INSERT INTO Products3 VALUES('バナナ',  100);
+/*!40000 ALTER TABLE `Products3` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Products4`
+--
+
+DROP TABLE IF EXISTS `Products4`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Products4` (
+  `name` varchar(16) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Products4`
+--
+
+LOCK TABLES `Products4` WRITE;
+/*!40000 ALTER TABLE `Products4` DISABLE KEYS */;
+INSERT INTO Products4 VALUES('りんご',  50);
+INSERT INTO Products4 VALUES('みかん',  100);
+INSERT INTO Products4 VALUES('ぶどう',  50);
+INSERT INTO Products4 VALUES('スイカ',  80);
+INSERT INTO Products4 VALUES('レモン',  30);
+INSERT INTO Products4 VALUES('バナナ',  50);
+/*!40000 ALTER TABLE `Products4` ENABLE KEYS */;
+UNLOCK TABLES;
 --
 -- Table structure for table `Projects`
 --

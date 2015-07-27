@@ -3,7 +3,7 @@
 SELECT
   '歯抜け有り' AS gap
 FROM
-  seqtbl
+  SeqTbl
 HAVING
   COUNT(*) <> MAX(seq)
 ;

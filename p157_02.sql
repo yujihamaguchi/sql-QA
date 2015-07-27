@@ -35,6 +35,15 @@ WHERE
 			AND mod(r1.n, r2.n) = 0)
 ;
 */
+CREATE OR REPLACE VIEW numbers AS
+  SELECT
+    r1.digit
+    + r2.digit * 10 AS num
+  FROM
+    Digits r1
+  CROSS JOIN
+    Digits r2
+;
 SELECT
   num
 FROM

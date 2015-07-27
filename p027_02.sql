@@ -1,11 +1,11 @@
 ﻿-- Q: greatestsのkey列を"B-A-D-C"の順に出力せよ
 -- A:
 SELECT
-	key
+	_key
 FROM
-	greatests
+	Greatests
 ORDER BY
-	CASE key
+	CASE _key
 		WHEN 'B' THEN 1
 		WHEN 'A' THEN 2
 		WHEN 'D' THEN 3

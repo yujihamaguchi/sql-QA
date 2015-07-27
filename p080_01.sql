@@ -3,10 +3,10 @@
 SELECT
   shop
   ,COUNT(r1.item) AS zaiko
-  ,(SELECT DISTINCT COUNT(item) FROM items) - COUNT(r1.item) AS fusoku
+  ,(SELECT DISTINCT COUNT(item) FROM Items) - COUNT(r1.item) AS fusoku
 FROM
-  shopitems r1
-  ,items r2
+  ShopItems r1
+  ,Items r2
 WHERE
   r1.item = r2.item
 GROUP BY

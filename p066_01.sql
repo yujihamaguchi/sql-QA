@@ -3,7 +3,7 @@
 SELECT
   MIN(seq + 1)
 FROM
-  seqtbl
+  SeqTbl
 WHERE
-  seq + 1 NOT IN (SELECT seq FROM seqtbl)
+  seq + 1 NOT IN (SELECT seq FROM SeqTbl)
 ;

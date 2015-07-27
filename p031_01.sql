@@ -4,8 +4,10 @@ SELECT
   r1.name AS name1
   ,r2.name AS name2
 FROM
-  products r1
-  ,products r2
+  Products r1
+  ,Products r2
 WHERE
-  r1.name > r2.name
+  r1.name < r2.name
+ORDER BY
+  1,2
 ;

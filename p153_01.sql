@@ -1,11 +1,11 @@
-﻿-- Q: arraytblからcol1〜col10までの属性について
+﻿-- Q: ArrayTblからcol1〜col10までの属性について
 --    すべてが1である行
 --    、または少なくとも一つの属性値が9である行
 --    、またはすべてがNULLである行を抽出せよ。
 -- A:
 SELECT *
 FROM
-  arraytbl
+  ArrayTbl
 WHERE
   1 = ALL (
     col1

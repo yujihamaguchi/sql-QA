@@ -1,9 +1,9 @@
-﻿-- Q: teamsより、隊（team_id）の状態（status）が全て"待機"である隊を検索せよ。（HAVINGを用いて）
+﻿-- Q: Teamsより、隊（team_id）の状態（status）が全て"待機"である隊を検索せよ。（HAVINGを用いて）
 -- A:
 SELECT
   team_id
 FROM
-  teams
+  Teams
 GROUP BY
   team_id
 HAVING

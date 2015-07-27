@@ -1,9 +1,9 @@
-﻿-- Q: testscoresより、算数の点数が80点以上で、且つ国語の点数が50点以上の学生ＩＤ（student_id）を選択せよ。（HAVING句と特性関数を用いること）
+﻿-- Q: TestScoresより、算数の点数が80点以上で、且つ国語の点数が50点以上の学生ＩＤ（student_id）を選択せよ。（HAVING句と特性関数を用いること）
 -- A:
 SELECT
   student_id
 FROM
-  testscores
+  TestScores
 WHERE
   subject IN ('算数', '国語')
 GROUP BY

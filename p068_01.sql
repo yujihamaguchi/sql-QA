@@ -1,4 +1,4 @@
-﻿-- Q: graduatesからincomeの最頻値（mode）とそのカウントを取得せよ
+﻿-- Q: Graduatesからincomeの最頻値（mode）とそのカウントを取得せよ
 --    ・ALL述語を使用すること
 -- A
 
@@ -6,7 +6,7 @@ SELECT
 	income
 	,COUNT(*)
 FROM
-	graduates
+	Graduates
 GROUP BY
 	income
 HAVING
@@ -14,7 +14,7 @@ HAVING
 		SELECT
 			COUNT(*)
 		FROM
-			graduates
+			Graduates
 		GROUP BY
 			income)
 ;
