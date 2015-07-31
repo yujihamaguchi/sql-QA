@@ -2,11 +2,11 @@
 -- A
 SELECT
   year
-  ,CASE SIGN(r1.sale - (SELECT r2.sale FROM sales r2 WHERE r2.year = r1.year -1))
+  ,CASE SIGN(r1.sale - (SELECT r2.sale FROM Sales r2 WHERE r2.year = r1.year -1))
     WHEN 0 THEN '-'
     WHEN -1 THEN 'DOWN'
     WHEN 1 THEN 'UP'
   END AS status
 FROM
-  sales r1
+  Sales r1
 ;

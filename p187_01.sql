@@ -1,9 +1,9 @@
-﻿-- Q: testresultsより、50点以上を取った生徒の内、男子の数が女子より多いクラスを選択せよ。
+﻿-- Q: TestResultsより、50点以上を取った生徒の内、男子の数が女子より多いクラスを選択せよ。
 -- A:
 SELECT
   class
 FROM
-  testresults
+  TestResults
 GROUP BY
   class
 HAVING

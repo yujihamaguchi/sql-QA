@@ -5,5 +5,5 @@ SELECT
   ,prc_amt
   ,SUM(prc_amt) OVER (ORDER BY prc_date) AS summary
 FROM
-  accounts
+  Accounts
 ;

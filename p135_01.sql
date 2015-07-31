@@ -1,9 +1,10 @@
-﻿-- Q: products2から相関サブクエリを用いずに重複行を削除せよ。（ヒント：rowidの補集合をEXCEPTで求めてそれを削除対象とする）
+﻿-- Q: Products2から相関サブクエリを用いずに重複行を削除せよ。（ヒント：rowidの補集合をEXCEPTで求めてそれを削除対象とする）
 -- A
-DELETE FROM products2
+START TRANSACTION;
+DELETE FROM Products2
 WHERE
 	rowid IN (
-  SELECT rowid FROM products2
+  SELECT rowid FROM Products2
   MINUS
-  SELECT MIN(rowid) FROM products2 GROUP BY name, price)
+  SELECT MIN(rowid) FROM Products2 GROUP BY name, price)
 ;

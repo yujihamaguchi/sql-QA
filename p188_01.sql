@@ -1,9 +1,9 @@
-﻿-- Q: testresultsより、女子の平均点が、男子の平均点より高いクラスを選択せよ。（Dが選択されてはならない）
+﻿-- Q: TestResultsより、女子の平均点が、男子の平均点より高いクラスを選択せよ。（Dが選択されてはならない）
 -- A:
 SELECT
   class
 FROM
-  testresults
+  TestResults
 GROUP BY
   class
 HAVING

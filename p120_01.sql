@@ -4,9 +4,9 @@
 SELECT
   r1.*
 FROM
-  reservations r1
+  Reservations r1
 WHERE
-  EXISTS (SELECT * FROM reservations r2 WHERE
+  EXISTS (SELECT * FROM Reservations r2 WHERE
     r1.reserver <> r2.reserver
     AND (r1.start_date, r1.end_date) OVERLAPS (r2.start_date, r2.end_date))
 ;

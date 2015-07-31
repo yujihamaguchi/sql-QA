@@ -125,7 +125,13 @@ CREATE TABLE `Class_B` (
 
 LOCK TABLES `Class_B` WRITE;
 /*!40000 ALTER TABLE `Class_B` DISABLE KEYS */;
-INSERT INTO `Class_B` VALUES ('和泉',18,'千葉'),('武田',20,'千葉'),('石川',19,'神奈川');
+INSERT INTO `Class_B` VALUES
+('斎藤',22,'東京')
+,('田尻',23,'東京')
+,('山田',20,'東京')
+,('和泉',18,'千葉')
+,('武田',20,'千葉')
+,('石川',19,'神奈川');
 /*!40000 ALTER TABLE `Class_B` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -825,6 +831,35 @@ INSERT INTO `Students` VALUES ('ブラウン',22),('ラリー',19),('ジョン',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Students2`
+--
+
+DROP TABLE IF EXISTS `Students2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE Students2
+(student_id   INTEGER PRIMARY KEY,
+ dpt          VARCHAR(16) NOT NULL,
+ sbmt_date    DATE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Students2`
+--
+
+LOCK TABLES `Students2` WRITE;
+/*!40000 ALTER TABLE `Students2` DISABLE KEYS */;
+INSERT INTO Students2 VALUES(100,  '理学部',   '2005-10-10');
+INSERT INTO Students2 VALUES(101,  '理学部',   '2005-09-22');
+INSERT INTO Students2 VALUES(102,  '文学部',   NULL);
+INSERT INTO Students2 VALUES(103,  '文学部',   '2005-09-10');
+INSERT INTO Students2 VALUES(200,  '文学部',   '2005-09-22');
+INSERT INTO Students2 VALUES(201,  '工学部',   NULL);
+INSERT INTO Students2 VALUES(202,  '経済学部', '2005-09-25');
+/*!40000 ALTER TABLE `tudents2` ENABLE KEYS */;
+UNLOCK TABLES;
+--
 -- Table structure for table `SupParts`
 --
 
@@ -1057,3 +1092,220 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2013-02-01  7:02:28
+
+DROP TABLE IF EXISTS `Sales`;
+CREATE TABLE Sales
+(year INTEGER NOT NULL , 
+ sale INTEGER NOT NULL ,
+ PRIMARY KEY (year)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE `Sales` WRITE;
+INSERT INTO Sales VALUES (1990, 50);
+INSERT INTO Sales VALUES (1991, 51);
+INSERT INTO Sales VALUES (1992, 52);
+INSERT INTO Sales VALUES (1993, 52);
+INSERT INTO Sales VALUES (1994, 50);
+INSERT INTO Sales VALUES (1995, 50);
+INSERT INTO Sales VALUES (1996, 49);
+INSERT INTO Sales VALUES (1997, 55);
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `Sales2`;
+CREATE TABLE Sales2
+(year INTEGER NOT NULL , 
+ sale INTEGER NOT NULL , 
+ PRIMARY KEY (year)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE `Sales2` WRITE;
+INSERT INTO Sales2 VALUES (1990, 50);
+INSERT INTO Sales2 VALUES (1992, 50);
+INSERT INTO Sales2 VALUES (1993, 52);
+INSERT INTO Sales2 VALUES (1994, 55);
+INSERT INTO Sales2 VALUES (1997, 55);
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS Accounts;
+CREATE TABLE Accounts
+(prc_date DATE NOT NULL , 
+ prc_amt  INTEGER NOT NULL , 
+ PRIMARY KEY (prc_date)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE Accounts WRITE;
+INSERT INTO Accounts VALUES ('2006-10-26',  12000 );
+INSERT INTO Accounts VALUES ('2006-10-28',   2500 );
+INSERT INTO Accounts VALUES ('2006-10-31', -15000 );
+INSERT INTO Accounts VALUES ('2006-11-03',  34000 );
+INSERT INTO Accounts VALUES ('2006-11-04',  -5000 );
+INSERT INTO Accounts VALUES ('2006-11-06',   7200 );
+INSERT INTO Accounts VALUES ('2006-11-11',  11000 );
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS Reservations;
+CREATE TABLE Reservations
+(reserver    VARCHAR(30) PRIMARY KEY,
+ start_date  DATE  NOT NULL,
+ end_date    DATE  NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE Reservations WRITE;
+INSERT INTO Reservations VALUES('木村', '2006-10-26', '2006-10-27');
+INSERT INTO Reservations VALUES('荒木', '2006-10-28', '2006-10-31');
+INSERT INTO Reservations VALUES('堀',   '2006-10-31', '2006-11-01');
+INSERT INTO Reservations VALUES('山本', '2006-11-03', '2006-11-04');
+INSERT INTO Reservations VALUES('内田', '2006-11-03', '2006-11-05');
+INSERT INTO Reservations VALUES('水谷', '2006-11-06', '2006-11-06');
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS ArrayTbl2;
+CREATE TABLE ArrayTbl2
+ (key_   CHAR(1) NOT NULL,
+    i   INTEGER NOT NULL,
+  val   INTEGER,
+  PRIMARY KEY (key_, i)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE ArrayTbl2 WRITE;
+INSERT INTO ArrayTbl2 VALUES('A', 1, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 2, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 3, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 4, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 5, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 6, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 7, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 8, NULL);
+INSERT INTO ArrayTbl2 VALUES('A', 9, NULL);
+INSERT INTO ArrayTbl2 VALUES('A',10, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 1, 3);
+INSERT INTO ArrayTbl2 VALUES('B', 2, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 3, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 4, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 5, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 6, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 7, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 8, NULL);
+INSERT INTO ArrayTbl2 VALUES('B', 9, NULL);
+INSERT INTO ArrayTbl2 VALUES('B',10, NULL);
+INSERT INTO ArrayTbl2 VALUES('C', 1, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 2, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 3, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 4, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 5, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 6, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 7, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 8, 1);
+INSERT INTO ArrayTbl2 VALUES('C', 9, 1);
+INSERT INTO ArrayTbl2 VALUES('C',10, 1);
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS Seats;
+CREATE TABLE Seats
+(seat   INTEGER NOT NULL  PRIMARY KEY,
+ status CHAR(2) NOT NULL
+ CHECK (status IN ('空', '占'))
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE Seats WRITE;
+INSERT INTO Seats VALUES (1,  '占');
+INSERT INTO Seats VALUES (2,  '占');
+INSERT INTO Seats VALUES (3,  '空');
+INSERT INTO Seats VALUES (4,  '空');
+INSERT INTO Seats VALUES (5,  '空');
+INSERT INTO Seats VALUES (6,  '占');
+INSERT INTO Seats VALUES (7,  '空');
+INSERT INTO Seats VALUES (8,  '空');
+INSERT INTO Seats VALUES (9,  '空');
+INSERT INTO Seats VALUES (10, '空');
+INSERT INTO Seats VALUES (11, '空');
+INSERT INTO Seats VALUES (12, '占');
+INSERT INTO Seats VALUES (13, '占');
+INSERT INTO Seats VALUES (14, '空');
+INSERT INTO Seats VALUES (15, '空');
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS Seats2;
+CREATE TABLE Seats2
+ ( seat   INTEGER NOT NULL  PRIMARY KEY,
+   row_id CHAR(1) NOT NULL,
+   status CHAR(2) NOT NULL
+     CHECK (status IN ('空', '占'))
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE Seats2 WRITE;
+INSERT INTO Seats2 VALUES (1, 'A', '占');
+INSERT INTO Seats2 VALUES (2, 'A', '占');
+INSERT INTO Seats2 VALUES (3, 'A', '空');
+INSERT INTO Seats2 VALUES (4, 'A', '空');
+INSERT INTO Seats2 VALUES (5, 'A', '空');
+INSERT INTO Seats2 VALUES (6, 'B', '占');
+INSERT INTO Seats2 VALUES (7, 'B', '占');
+INSERT INTO Seats2 VALUES (8, 'B', '空');
+INSERT INTO Seats2 VALUES (9, 'B', '空');
+INSERT INTO Seats2 VALUES (10,'B', '空');
+INSERT INTO Seats2 VALUES (11,'C', '空');
+INSERT INTO Seats2 VALUES (12,'C', '空');
+INSERT INTO Seats2 VALUES (13,'C', '空');
+INSERT INTO Seats2 VALUES (14,'C', '占');
+INSERT INTO Seats2 VALUES (15,'C', '空');
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS Seats3;
+CREATE TABLE Seats3
+ ( seat   INTEGER NOT NULL  PRIMARY KEY,
+   status CHAR(2) NOT NULL
+     CHECK (status IN ('空', '占'))
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE Seats3 WRITE;
+INSERT INTO Seats3 VALUES (1,  '占');
+INSERT INTO Seats3 VALUES (2,  '空');
+INSERT INTO Seats3 VALUES (3,  '空');
+INSERT INTO Seats3 VALUES (4,  '空');
+INSERT INTO Seats3 VALUES (5,  '空');
+INSERT INTO Seats3 VALUES (6,  '占');
+INSERT INTO Seats3 VALUES (7,  '空');
+INSERT INTO Seats3 VALUES (8,  '占');
+INSERT INTO Seats3 VALUES (9,  '空');
+INSERT INTO Seats3 VALUES (10, '空');
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS Teams2;
+CREATE TABLE Teams2
+(member  CHAR(12) NOT NULL PRIMARY KEY,
+ team_id INTEGER  NOT NULL,
+ status  CHAR(8)  NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE Teams2 WRITE;
+INSERT INTO Teams2 VALUES('ジョー',   1, '待機');
+INSERT INTO Teams2 VALUES('ケン',     1, '出動中');
+INSERT INTO Teams2 VALUES('ミック',   1, '待機');
+INSERT INTO Teams2 VALUES('カレン',   2, '出動中');
+INSERT INTO Teams2 VALUES('キース',   2, '休暇');
+INSERT INTO Teams2 VALUES('ジャン',   3, '待機');
+INSERT INTO Teams2 VALUES('ハート',   3, '待機');
+INSERT INTO Teams2 VALUES('ディック', 3, '待機');
+INSERT INTO Teams2 VALUES('ベス',     4, '待機');
+INSERT INTO Teams2 VALUES('アレン',   5, '出動中');
+INSERT INTO Teams2 VALUES('ロバート', 5, '休暇');
+INSERT INTO Teams2 VALUES('ケーガン', 5, '待機');
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS TestResults;
+CREATE TABLE TestResults
+(student CHAR(12) NOT NULL PRIMARY KEY,
+ class   CHAR(1)  NOT NULL,
+ sex     CHAR(1)  NOT NULL,
+ score   INTEGER  NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+LOCK TABLE TestResults WRITE;
+INSERT INTO TestResults VALUES('001', 'A', '男', 100);
+INSERT INTO TestResults VALUES('002', 'A', '女', 100);
+INSERT INTO TestResults VALUES('003', 'A', '女',  49);
+INSERT INTO TestResults VALUES('004', 'A', '男',  30);
+INSERT INTO TestResults VALUES('005', 'B', '女', 100);
+INSERT INTO TestResults VALUES('006', 'B', '男',  92);
+INSERT INTO TestResults VALUES('007', 'B', '男',  80);
+INSERT INTO TestResults VALUES('008', 'B', '男',  80);
+INSERT INTO TestResults VALUES('009', 'B', '女',  10);
+INSERT INTO TestResults VALUES('010', 'C', '男',  92);
+INSERT INTO TestResults VALUES('011', 'C', '男',  80);
+INSERT INTO TestResults VALUES('012', 'C', '女',  21);
+INSERT INTO TestResults VALUES('013', 'D', '女', 100);
+INSERT INTO TestResults VALUES('014', 'D', '女',   0);
+INSERT INTO TestResults VALUES('015', 'D', '女',   0);
+UNLOCK TABLES;
+

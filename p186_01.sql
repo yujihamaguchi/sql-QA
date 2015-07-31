@@ -1,8 +1,8 @@
-﻿-- Q: testresultsより、クラス（class）の75%以上の生徒が80点以上のクラスを選択せよ。
+﻿-- Q: TestResultsより、クラス（class）の75%以上の生徒が80点以上のクラスを選択せよ。
 SELECT
   class
 FROM
-  testresults
+  TestResults
 GROUP BY
   class
 HAVING
